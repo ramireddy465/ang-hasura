@@ -1,0 +1,54 @@
+
+
+
+
+
+<div class="container">
+
+  <form #data="ngForm" (ngSubmit)="onSubmit(data.value)">
+ 
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input type="email" class="form-control" id="name" name="name" ngModel aria-describedby="emailHelp" placeholder="name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Age</label>
+      <input type="number" class="form-control" id="age" name="age" ngModel placeholder="age">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Mobile</label>
+      <input type="text" class="form-control" id="mobile" name="mobile" ngModel placeholder="mobile">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
+
+<br><br>
+
+
+
+
+
+<div class="container">
+<table class="table" >
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Mobile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todo | async">
+      <td >{{todo.id}}</td>
+      <td>{{todo.name}}</td>
+      <td>{{todo.age}}</td>
+      <td>{{todo.mobile}}</td>
+    </tr>
+    
+  </tbody>
+</table>
+</div>
